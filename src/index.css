@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0088cc;
+  border-radius: 8px;
+}
+
+html {
+  background-color: #020816;
+  overflow-x: hidden;
+}
+.videoplayer {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+.videoplayer video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+@media only screen and (max-width: 767px) {
+  .videoplayer video {
+    /* width: 100vw; */
+    padding-top: 5rem;
+    height: fit-content !important;
+    max-height: 45vh !important;
+    object-fit: cover !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .videoplayer {
+    width: 100vw;
+    height: 45vh !important;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  .paddingtop {
+    @apply pt-[4rem];
+  }
+  .paddingbottom {
+    @apply pb-[4rem];
+  }
+  .main-title {
+    @apply text-[30px] sm:text-[40px]  font-bold dark:text-white text-darkbackground;
+  }
+  .desc {
+    @apply text-base font-normal dark:text-white text-darkbackground;
+  }
+  .section-heading {
+    @apply text-[32px] font-bold;
+  }
+  .hero-heading {
+    @apply font-bold text-2xl text-white;
+  }
+  .small-heading {
+    @apply text-xl  font-semibold;
+  }
+  .small-desc {
+    @apply text-[17px]  font-normal;
+  }
+  .primary-btn {
+    @apply bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/70 transition-colors;
+  }
+  .secondary-btn-white {
+    @apply dark:bg-white hover:bg-gradient-to-b hover:from-white hover:to-primary bg-gradient-to-b from-white to-[#E5E5E8] text-black px-6 py-2 rounded-md hover:bg-white/70 transition-colors duration-300;
+  }
+  .darkandlightcardhovertext {
+    @apply dark:group-hover:text-white group-hover:text-white;
+  }
+}
+
+.hovershadow:hover {
+  -webkit-box-shadow: 9px 9px 8px -3px rgba(1, 111, 200, 0.65);
+  -moz-box-shadow: 9px 9px 8px -3px rgba(1, 111, 200, 0.65);
+  box-shadow: 9px 9px 8px -3px rgba(1, 111, 200, 0.65);
+}
+.hovershadowwhite:hover {
+  -webkit-box-shadow: 9px 9px 8px -3px rgba(255, 255, 255, 0.65);
+  -moz-box-shadow: 9px 9px 8px -3px rgba(255, 255, 255, 0.65);
+  box-shadow: 9px 9px 8px -3px rgba(255, 255, 255, 0.65);
+}
+.hovershadowwhite {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.hovershadow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* loading spinner styles */
+.spinner-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.726);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #0088cc;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+.error {
+  color: #cb2804;
+}
+
+.rotate-animation {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
