@@ -70,11 +70,10 @@ import { TbDeviceMobileCode } from "react-icons/tb";
 import { FaXTwitter } from "react-icons/fa6";
 
 export const companyDetails = {
-  name: "GodversAi",
+  name: "aicompany",
   email: "aicompany@gmail.com",
-  phone: "+91-6360503451",
-  address:
-    "Salarpuria Symbiosis, Ground floor Bannerghatta Road Arekere Village, Begur Hobli, Bengaluru, Karnataka 560076",
+  phone: "+91-0000000000",
+  address: "company address",
   socialLinks: [
     {
       href: "",
