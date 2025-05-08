@@ -52,29 +52,29 @@ const HomePageBanner = () => {
 
   return (
     <div className="relative w-full bg-[#060b19] sm:min-h-screen">
-      <div className="absolute left-0 top-0 w-full h-full bg-black/40 sm:hidden flex" />
+      <div className="absolute left-0 top-0 w-full h-full bg-black/40" />
       <ReactPlayer
         url={bannervideo}
         loop={true}
         playsinline
         playing={true}
-        // width="100%"
-        // height="100vh"
+        width="100%"
+        height="100vh"
         muted
         className="object-cover videoplayer"
         config={{
           file: {
             attributes: {
               style: {
-                // objectFit: "cover",
-                // width: "100vw",
-                // height: "100vh",
+                objectFit: "cover",
+                width: "100vw",
+                height: "100vh",
               },
             },
           },
         }}
       />
-      <div className="absolute flex flex-col items-center justify-between    left-0 top-0 w-full h-full pt-[7rem]">
+      <div className="absolute flex flex-col items-center justify-center    left-0 top-0 w-full h-full pt-[7rem]">
         <h1 className="sm:text-5xl text-lg font-bold text-center text-white mb-6">
           {displayHeading}
           {cursorPosition === "heading" && (
